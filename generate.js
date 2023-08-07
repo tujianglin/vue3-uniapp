@@ -4,6 +4,7 @@ const axios = require('axios');
 const path = require('path');
 require('dotenv').config();
 const apiList = ['system', 'cps', 'authentication', 'notify', 'mdc', 'dnc', 'tpm', 'trace', 'visual', 'sync', 'tool', 'perf', 'dmp-log', 'fms', 'coproduction', 'andon', 'lms'];
+
 apiList.map((api) => {
   fetchText(api, `${process.env.VITE_PROXY}/v2/api-docs?group=${api}`);
 });
@@ -20,7 +21,7 @@ async function fetchText(api, url) {
       generateClient: true,
       generateRouteTypes: false,
       silent: true,
-      httpClientType: 'axios',
+      templates: './api-templates',
     });
   });
 }
@@ -43,9 +44,28 @@ function writeApiIndex() {
     fs.appendFileSync(filePath, text);
   });
   let text = 'export default {\n';
-  apiList.map((api) => {
-    text += `  ...new ${toCamelCase(api)}().blade${toCamelCase(api)}, \n`;
-  });
+  text += `  ...new Cps().bladeCps,
+  ...new Mdc().bladeMdc,
+  ...new Mdc().bladeCps,
+  ...new Auth().bladeAuth,
+  ...new Notify().bladeNotify,
+  ...new System().bladeUser,
+  ...new System().bladeSystem,
+  ...new System().bladeResource,
+  ...new Tpm().bladeTpm,
+  ...new Dnc().bladeDnc,
+  ...new Visual().bladeVisual,
+  ...new Sync().bladeSync,
+  ...new Tool().bladeTool,
+  ...new Fms().bladeFms,
+  ...new Coproduction().bladeCoproduction,
+  ...new DmpLog().bladeDmpLog,
+  ...new Andon().bladeAndon,
+  ...new Trace().bladeTrace,
+  ...new Perf().bladePerf,
+  ...new Lms().bladeLms,
+`;
+
   text += `};`;
   fs.appendFileSync(filePath, text);
 }

@@ -736,7 +736,7 @@ export interface RString {
 }
 
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, HeadersDefaults, ResponseType } from 'axios';
-import axios from 'axios';
+import axios from '/@/utils/http';
 
 export type QueryParamsType = Record<string | number, any>;
 
@@ -777,8 +777,8 @@ export class HttpClient<SecurityDataType = unknown> {
   private secure?: boolean;
   private format?: ResponseType;
 
-  constructor({ securityWorker, secure, format, ...axiosConfig }: ApiConfig<SecurityDataType> = {}) {
-    this.instance = axios.create({ ...axiosConfig, baseURL: axiosConfig.baseURL || '//192.168.3.114:31002' });
+  constructor({ securityWorker, secure, format }: ApiConfig<SecurityDataType> = {}) {
+    this.instance = axios;
     this.secure = secure;
     this.format = format;
     this.securityWorker = securityWorker;
@@ -857,7 +857,7 @@ export class HttpClient<SecurityDataType = unknown> {
  * @version 2.8.2.RELEASE
  * @license Powered By BladeX (https://bladex.vip)
  * @termsOfService https://bladex.vip
- * @baseUrl //192.168.3.114:31002
+ * @baseUrl //frp.linkvision.cloud
  * @contact smallchill <smallchill@163.com> (https://gitee.com/smallc)
  *
  * BladeX 接口文档系统
