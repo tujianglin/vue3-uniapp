@@ -8,11 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 
+generate.js
 node_modules
 dist
 dist-ssr
 *.local
-generate.js
 
 # Editor directories and files
 release*
