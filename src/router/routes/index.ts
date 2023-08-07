@@ -1,4 +1,4 @@
-import type { AppRouteModule } from '/@/router/types';
+import type { AppRouteModule } from '/#/router';
 
 /**
  * 获取到模块里的参数

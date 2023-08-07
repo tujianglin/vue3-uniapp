@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import 'element-plus/dist/index.css';
+import 'ant-design-vue/dist/reset.css';
 import '/@/design/index.scss';
 import { router, setupRouter } from '/@/router';
 import { setupRouterGuard } from '/@/router/guard';

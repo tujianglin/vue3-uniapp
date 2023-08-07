@@ -1,17 +1,11 @@
 <script lang="tsx">
-  import { defineComponent, onMounted } from 'vue';
-  import { ElButton } from 'element-plus';
-  import api from '/@/api';
+  import { defineComponent } from 'vue';
+  import { Button } from 'ant-design-vue';
   export default defineComponent({
     setup() {
-      onMounted(() => {
-        api.apiScopeDetail().then((res) => {
-          console.log(res.data.data);
-        });
-      });
       return () => (
         <div>
-          <ElButton>111</ElButton>
+          <Button type={'primary'}>111</Button>
         </div>
       );
     },

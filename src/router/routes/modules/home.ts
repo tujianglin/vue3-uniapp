@@ -1,4 +1,4 @@
-import type { AppRouteModule } from '/@/router/types';
+import type { AppRouteModule } from '/#/router';
 const LAYOUT = () => import('/@/App.vue');
 const Home: AppRouteModule[] = [
   {
