@@ -8,7 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 
-generate.js
 node_modules
 dist
 dist-ssr
@@ -17,6 +16,7 @@ dist-ssr
 # Editor directories and files
 release*
 interface
+generate.js
 !.vscode/extensions.json
 .idea
 .DS_Store
