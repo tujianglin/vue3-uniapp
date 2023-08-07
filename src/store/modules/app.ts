@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { Storage } from '/@/utils/storage';
 import { StorageEnum } from '/@/enums/storageEnum';
-import { defAppConfig } from '/@/settings/designSetting';
+import { defAppConfig, defThemeToken } from '/@/settings/designSetting';
 import { LocalAppConfig } from '/#/storage';
 import { store } from '/@/store';
 import { assign } from 'lodash-es';
@@ -13,7 +13,7 @@ interface AppState {
 }
 
 /* 缓存主题配置 */
-const themeToken = Storage.getLocal<AppState['themeToken']>(StorageEnum.THEME_TOKEN) || { colorPrimary: '#1890ff' };
+const themeToken = Storage.getLocal<AppState['themeToken']>(StorageEnum.THEME_TOKEN) || defThemeToken;
 
 export const useAppStore = defineStore('app', {
   state: (): AppState => ({
@@ -35,7 +35,7 @@ export const useAppStore = defineStore('app', {
       });
       Storage.setLocal(StorageEnum.APP_CONFIG, this.appConfig);
     },
-    /* 主题颜色配置 */
+    /* 主题配置 */
     setThemeToken(token: ThemeConfig['token']) {
       assign(this.themeToken, token);
       Storage.setLocal(StorageEnum.THEME_TOKEN, this.themeToken);
