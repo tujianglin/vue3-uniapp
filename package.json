@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "lint:lint-staged": "lint-staged",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "generate": "node generate.js"
+    "generate": "tsc generate.ts && node generate.js"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",

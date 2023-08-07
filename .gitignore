@@ -12,6 +12,7 @@ node_modules
 dist
 dist-ssr
 *.local
+generate.js
 
 # Editor directories and files
 release*
