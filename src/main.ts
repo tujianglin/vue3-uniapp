@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import 'ant-design-vue/dist/reset.css';
 import '/@/design/index.scss';
+import 'virtual:uno.css';
 import { router, setupRouter } from '/@/router';
 import { setupStore } from '/@/store';
 import { setupI18n } from '/@/locales';

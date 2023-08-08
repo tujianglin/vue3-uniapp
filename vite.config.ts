@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import { resolve } from 'path';
 import { createVitePlugins } from './build/vite';
 import { wrapperEnv } from './build/utils';
+
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
 }
