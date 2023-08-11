@@ -2,7 +2,7 @@ import type { AppRouteModule } from '/#/router';
 import { LAYOUT } from '/@/router/constant';
 const Home: AppRouteModule[] = [
   {
-    path: '/',
+    path: '/home',
     name: '主程序模块功能',
     component: LAYOUT,
     redirect: '/home',

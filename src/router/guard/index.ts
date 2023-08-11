@@ -16,9 +16,15 @@ export function setupRouterGuard(router: Router) {
 function createPageGuard(router: Router) {
   const loadedPageMap = new Map<string, boolean>();
   // 全局前置守卫
-  router.beforeEach(async (to) => {
+  router.beforeEach(async (to, _, next) => {
     // 页面已经加载，重新打开会更快，您不需要进行加载和其他处理
     to.meta.loaded = !!loadedPageMap.get(to.path);
+    if (to.path === '/') {
+      next({
+        path: '/login',
+      });
+    }
+    next();
     return true;
   });
   // 全局后置守卫

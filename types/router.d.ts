@@ -7,7 +7,7 @@ export type Component<T = any> = ReturnType<typeof defineComponent> | (() => Pro
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string;
   meta: RouteMeta;
-  component: Component | string;
+  component?: Component | string;
   components?: Component;
   children?: AppRouteRecordRaw[] | any;
 }
