@@ -10,41 +10,43 @@
  */
 
 import { User } from './data-contracts';
-import { HttpClient, RequestParams } from './http-client';
+import { ContentType, HttpClient, RequestParams } from './http-client';
 
 export class UserApi<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {
   /**
    * No description
    *
-   * @tags user
+   * @tags 用户
    * @name UserControllerGetUsers
-   * @summary 获取用户列表
    * @request GET:/user
    */
   userControllerGetUsers = (params: RequestParams = {}) =>
-    this.request<User, any>({
+    this.request<void, any>({
       path: `/user`,
       method: 'GET',
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 用户
+   * @name UserControllerAddUser
+   * @summary 添加用户
+   * @request POST:/user
+   */
+  userControllerAddUser = (data: User, params: RequestParams = {}) =>
+    this.request<User, any>({
+      path: `/user`,
+      method: 'POST',
+      body: data,
+      type: ContentType.Json,
       format: 'json',
       ...params,
     });
   /**
    * No description
    *
-   * @tags user
-   * @name UserControllerAddUser
-   * @request POST:/user
-   */
-  userControllerAddUser = (params: RequestParams = {}) =>
-    this.request<void, any>({
-      path: `/user`,
-      method: 'POST',
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags user
+   * @tags 用户
    * @name UserControllerUpdateUser
    * @request PATCH:/user
    */
@@ -57,7 +59,7 @@ export class UserApi<SecurityDataType = unknown> extends HttpClient<SecurityData
   /**
    * No description
    *
-   * @tags user
+   * @tags 用户
    * @name UserControllerDeleteUser
    * @request DELETE:/user
    */
@@ -70,7 +72,7 @@ export class UserApi<SecurityDataType = unknown> extends HttpClient<SecurityData
   /**
    * No description
    *
-   * @tags user
+   * @tags 用户
    * @name UserControllerGetUserProfile
    * @request GET:/user/profile
    */
@@ -83,7 +85,7 @@ export class UserApi<SecurityDataType = unknown> extends HttpClient<SecurityData
   /**
    * No description
    *
-   * @tags user
+   * @tags 用户
    * @name UserControllerGetUserLogs
    * @request GET:/user/logs
    */
@@ -96,7 +98,7 @@ export class UserApi<SecurityDataType = unknown> extends HttpClient<SecurityData
   /**
    * No description
    *
-   * @tags user
+   * @tags 用户
    * @name UserControllerGetLogsByGroup
    * @request GET:/user/logsByGroup
    */
