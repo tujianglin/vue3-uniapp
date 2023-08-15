@@ -5,7 +5,7 @@ const templatesPath = './api-templates';
 generateApi({
   name: 'test',
   output: outputPath,
-  url: 'http://localhost:3000/api-json',
+  url: 'http://localhost:3000/api-docs-json',
   generateClient: true,
   generateRouteTypes: false,
   silent: true,

@@ -2,7 +2,6 @@
   import { defineComponent } from 'vue';
   import { Button } from 'ant-design-vue';
   import { useI18n } from '/@/hooks/useI18n';
-  import api from '/@/api';
   export default defineComponent({
     setup() {
       const { t } = useI18n();
@@ -10,8 +9,6 @@
         // setThemeToken({
         //   colorPrimary: 'red',
         // });
-        const res = await api.userControllerGetUserLogs();
-        console.log(res.data);
       };
       return () => (
         <div>

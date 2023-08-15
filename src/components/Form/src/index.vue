@@ -35,7 +35,6 @@
       const getDefaultValue = (item: FormItemOption) => {
         const isArray = ['CheckboxGroup'].includes(item.component);
         const isUndefined = ['Select'].includes(item.component);
-        console.log(isUndefined);
         return isArray ? [] : isUndefined ? undefined : '';
       };
 

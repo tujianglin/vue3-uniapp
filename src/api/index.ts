@@ -1,7 +1,9 @@
 import { LogsApi } from './modules/Logs';
-import { UserApi } from './modules/User';
+import { UsersApi } from './modules/Users';
+import { AuthApi } from './modules/Auth';
 
 export default {
   ...new LogsApi(),
-  ...new UserApi(),
+  ...new UsersApi(),
+  ...new AuthApi(),
 };

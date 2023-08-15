@@ -9,10 +9,25 @@
  * ---------------------------------------------------------------
  */
 
-export type Logs = object;
-
-export interface User {
-  id?: number;
+export interface CreateUserDto {
+  /** 用户名 */
   username: string;
+  password: string;
+}
+
+export interface UpdateUserDto {
+  /** 用户名 */
+  username?: string;
+  password?: string;
+}
+
+export type CreateLogDto = object;
+
+export type UpdateLogDto = object;
+
+export interface CreateAuthDto {
+  /** 用户名 */
+  username: string;
+  /** 密码 */
   password: string;
 }
