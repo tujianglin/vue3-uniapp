@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import uni from '@dcloudio/vite-plugin-uni';
 import AutoImport from 'unplugin-auto-import/vite';
 import TransformPages from 'uni-read-pages-vite';
+import UnoCSS from 'unocss/vite';
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
 }
@@ -26,6 +27,7 @@ export default defineConfig(({}) => {
     },
     plugins: [
       uni(),
+      UnoCSS(),
       AutoImport({
         include: [
           /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx

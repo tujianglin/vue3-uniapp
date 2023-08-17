@@ -1,5 +1,5 @@
 <template>
-  <div> 222 </div>
+  <view> 222 </view>
 </template>
 <script lang="ts" setup>
   import {} from 'vue';
