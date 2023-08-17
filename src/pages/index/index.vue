@@ -8,9 +8,12 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import Demo1 from '/@/components/demo1.vue';
+  import { useAppStore } from '/@/store/modules/app';
+  const appStore = useAppStore();
   const title = ref('Hello');
   const router = useRouter();
   const handleClick = () => {
+    console.log(appStore.a);
     router.push({
       path: '/pages/hello/index',
     });
