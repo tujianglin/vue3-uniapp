@@ -1,12 +1,20 @@
 <template>
-  <view class="content">
+  <view class="content" @click="handleClick">
     {{ title }}
+    <Demo1 />
   </view>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
   import { ref } from 'vue';
+  import Demo1 from '/@/components/demo1.vue';
   const title = ref('Hello');
+  const router = useRouter();
+  const handleClick = () => {
+    router.push({
+      path: '/pages/hello/index',
+    });
+  };
 </script>
 
 <style>

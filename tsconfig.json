@@ -1,13 +1,27 @@
 {
   "compilerOptions": {
     "sourceMap": true,
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "strict": true,
+    "alwaysStrict": true, 
+    "noImplicitAny": true, 
+    "noImplicitThis": true, 
+    "strictNullChecks": true,
+    "strictBindCallApply": true, 
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true, 
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "/@/*": ["src/*"],
       "/#/*": ["types/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"]
+    "types": ["@dcloudio/types", "@types/node"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/**/*.d.ts", "types/**/*.ts"]
 }
