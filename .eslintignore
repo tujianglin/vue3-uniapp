@@ -1,0 +1,7 @@
+node_modules
+*.md
+.vscode
+dist
+/public
+.husky
+/dist-electron
