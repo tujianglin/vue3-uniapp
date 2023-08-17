@@ -3,6 +3,6 @@
 </template>
 <script lang="ts" setup>
   import {} from 'vue';
-  const a = '';
+  const b = '';
 </script>
 <style lang="less" scoped></style>
