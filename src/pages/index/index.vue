@@ -6,6 +6,13 @@
   </view>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import { onMounted } from 'vue';
+  import api from '/@/api';
+  onMounted(async () => {
+    const res = await api.usersControllerFindAll();
+    console.log(res);
+  });
+</script>
 
 <style lang="scss" scoped></style>
