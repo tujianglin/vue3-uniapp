@@ -5,3 +5,4 @@ dist
 /public
 .husky
 /dist-electron
+src/uni_modules/*

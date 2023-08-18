@@ -3,3 +3,4 @@
 **/*.svg
 **/*.sh
 /public/*
+src/uni_modules/*
