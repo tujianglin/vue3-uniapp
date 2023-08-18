@@ -53,8 +53,10 @@
     "appid": "wxdd7cfcf707c19281",
     "setting": {
       "urlCheck": false,
-      "compileHotReLoad": false
+      "compileHotReLoad": false,
+      "minified": true
     },
+    "lazyCodeLoading": "requiredComponents",
     "usingComponents": true
   },
   "mp-alipay": {
