@@ -5,3 +5,5 @@ dist
 /public
 .husky
 /dist-electron
+/assets
+/src/components/Repl
